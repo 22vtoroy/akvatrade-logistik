@@ -2,33 +2,34 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <title>АКВА ТРЕЙД ЛОГІСТІК – перевалка дизельного палива та бензину</title>
+  <title>АКВА ТРЕЙД ЛОГІСТІК – паливна логістика на Дунаї</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="АКВА ТРЕЙД ЛОГІСТІК – перевалка дизельного палива та бензину, навантаження у залізничні цистерни та автотранспорт. Надійна логістика пального від причалу до клієнта.">
   <style>
     :root {
-      --bg-dark: #05070a;
-      --bg-section: #0a0f17;
-      --accent: #00b4ff;
-      --accent-soft: rgba(0,180,255,0.12);
-      --text-main: #f5f7fb;
-      --text-muted: #a3adb8;
-      --border-soft: #1b2432;
-      --card-bg: #0f1724;
+      --bg-body: #020617;
+      --bg-page: #020617;
+      --bg-card: #020817;
+      --accent: #38bdf8;
+      --accent-strong: #0ea5e9;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2937;
       --radius-lg: 16px;
-      --radius-xl: 20px;
-      --shadow-soft: 0 20px 40px rgba(0,0,0,0.4);
+      --radius-xl: 22px;
+      --shadow-hero: 0 30px 80px rgba(0,0,0,0.7);
+      --shadow-soft: 0 18px 45px rgba(15,23,42,0.65);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
 
     body {
-      background: radial-gradient(circle at top, #101827 0, #020308 55%);
+      background: radial-gradient(circle at top, #0b1220 0, #020617 45%, #020617 100%);
       color: var(--text-main);
       line-height: 1.6;
     }
@@ -39,23 +40,28 @@
     }
 
     .page {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 24px 16px 64px;
+      max-width: 1160px;
+      margin: 0 auto 60px;
+      padding: 18px 16px 56px;
     }
+
+    /* HEADER */
 
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 18px;
+      padding: 10px 18px;
       border-radius: 999px;
-      background: rgba(3,7,18,0.85);
-      border: 1px solid var(--border-soft);
-      backdrop-filter: blur(20px);
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.16), transparent 60%),
+        rgba(15,23,42,0.92);
+      border: 1px solid rgba(148,163,184,0.3);
+      backdrop-filter: blur(18px);
       position: sticky;
-      top: 12px;
-      z-index: 10;
+      top: 10px;
+      z-index: 20;
+      box-shadow: 0 10px 35px rgba(15,23,42,0.7);
     }
 
     .logo {
@@ -65,15 +71,17 @@
     }
 
     .logo-mark {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #4adeff 0, #0369a1 40%, #020617 100%);
+      background: radial-gradient(circle at 20% 0, #e0f2fe 0, #38bdf8 35%, #0f172a 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 16px;
+      color: #0b1120;
+      box-shadow: 0 0 0 1px rgba(15,23,42,0.9);
     }
 
     .logo-text {
@@ -95,7 +103,7 @@
 
     nav {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       font-size: 13px;
       color: var(--text-muted);
     }
@@ -107,45 +115,85 @@
     }
 
     nav a:hover {
-      background: rgba(148,163,184,0.12);
-      color: var(--text-main);
+      background: rgba(15,23,42,0.9);
+      color: var(--accent);
+    }
+
+    /* HERO */
+
+    .hero-wrapper {
+      margin-top: 26px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-hero);
+      border: 1px solid rgba(31,41,55,0.9);
+      background: #020617;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(15,23,42,0.15), rgba(15,23,42,0.97)),
+        url("hero-port.jpg") center/cover no-repeat;
+      opacity: 0.95;
+      z-index: -2;
+    }
+
+    .hero-overlay-glow {
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 15% 0, rgba(56,189,248,0.28), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(34,197,94,0.2), transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.55;
+      z-index: -1;
     }
 
     .hero {
-      margin-top: 32px;
-      padding: 28px 24px;
-      border-radius: var(--radius-xl);
-      background: radial-gradient(circle at top left, rgba(56,189,248,0.25), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(59,130,246,0.25), transparent 55%),
-                  #020617;
-      border: 1px solid rgba(148,163,184,0.2);
-      box-shadow: var(--shadow-soft);
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
-      gap: 24px;
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.3fr);
+      gap: 26px;
+      padding: 32px 26px 26px;
     }
 
     .hero-kicker {
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
+      letter-spacing: 0.2em;
+      color: rgba(148,163,184,0.9);
       font-weight: 600;
       margin-bottom: 10px;
+    }
+
+    .hero-kicker span {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.75);
+      color: #e5e7eb;
     }
 
     .hero-title {
       font-size: 32px;
       font-weight: 800;
       line-height: 1.15;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      text-shadow: 0 12px 25px rgba(0,0,0,0.7);
+    }
+
+    .hero-title span {
+      color: #7dd3fc;
     }
 
     .hero-subtitle {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-muted);
-      max-width: 420px;
-      margin-bottom: 18px;
+      max-width: 460px;
+      margin-bottom: 16px;
     }
 
     .hero-highlights {
@@ -161,14 +209,16 @@
       letter-spacing: 0.14em;
       padding: 6px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.35);
-      color: var(--text-muted);
+      border: 1px solid rgba(148,163,184,0.55);
+      color: #cbd5f5;
+      background: rgba(15,23,42,0.9);
+      backdrop-filter: blur(6px);
     }
 
     .pill-accent {
-      border-color: rgba(56,189,248,0.5);
-      background: rgba(15,118,110,0.3);
-      color: #e0faff;
+      border-color: rgba(56,189,248,0.7);
+      background: rgba(15,118,110,0.55);
+      color: #ecfeff;
     }
 
     .hero-actions {
@@ -187,13 +237,13 @@
       border: none;
       color: #0b1120;
       cursor: pointer;
-      box-shadow: 0 12px 30px rgba(34,197,94,0.35);
+      box-shadow: 0 16px 40px rgba(34,197,94,0.5);
       transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(34,197,94,0.45);
+      box-shadow: 0 20px 55px rgba(22,163,74,0.7);
       opacity: 0.98;
     }
 
@@ -204,27 +254,28 @@
 
     .hero-right {
       border-radius: 18px;
-      border: 1px solid rgba(148,163,184,0.3);
-      background: radial-gradient(circle at top, rgba(56,189,248,0.2), transparent 55%),
-                  radial-gradient(circle at bottom, rgba(34,197,94,0.18), transparent 55%),
-                  rgba(15,23,42,0.95);
+      border: 1px solid rgba(30,64,175,0.7);
+      background: radial-gradient(circle at top, rgba(56,189,248,0.32), transparent 60%),
+                  radial-gradient(circle at bottom, rgba(22,163,74,0.22), transparent 55%),
+                  rgba(15,23,42,0.93);
       padding: 16px 16px 18px;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-soft);
     }
 
     .hero-tag {
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
+      letter-spacing: 0.18em;
+      color: rgba(191,219,254,0.9);
       margin-bottom: 10px;
     }
 
     .hero-scheme {
       font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 10px;
+      color: #e5e7eb;
+      margin-bottom: 12px;
     }
 
     .hero-flow {
@@ -238,14 +289,31 @@
     .flow-item {
       padding: 6px 9px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.85);
-      border: 1px solid rgba(148,163,184,0.35);
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(129,140,248,0.5);
       white-space: nowrap;
+      color: #e5e7eb;
     }
 
     .flow-arrow {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--accent);
+    }
+
+    .hero-metrics {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-metric {
+      padding: 7px 10px;
+      border-radius: 12px;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(148,163,184,0.5);
     }
 
     .badge-corner {
@@ -255,13 +323,15 @@
       font-size: 10px;
       padding: 5px 9px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.95);
-      border: 1px solid rgba(148,163,184,0.4);
-      color: var(--text-muted);
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(148,163,184,0.6);
+      color: #e5e7eb;
     }
 
+    /* MAIN SECTIONS */
+
     section {
-      margin-top: 36px;
+      margin-top: 34px;
     }
 
     .section-header {
@@ -271,9 +341,9 @@
     .section-kicker {
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.2em;
       color: var(--accent);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .section-title {
@@ -285,7 +355,7 @@
     .section-sub {
       font-size: 14px;
       color: var(--text-muted);
-      max-width: 520px;
+      max-width: 540px;
     }
 
     .cards-3 {
@@ -295,22 +365,26 @@
     }
 
     .card {
-      background: rgba(15,23,42,0.95);
+      background: rgba(15,23,42,0.96);
       border: 1px solid var(--border-soft);
       border-radius: var(--radius-lg);
       padding: 16px 16px 14px;
+      box-shadow: 0 14px 35px rgba(15,23,42,0.7);
     }
 
     .card-title {
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 6px;
+      color: #f3f4f6;
     }
 
     .card-text {
       font-size: 13px;
       color: var(--text-muted);
     }
+
+    /* FLOW STEPS */
 
     .steps {
       display: grid;
@@ -322,8 +396,8 @@
     .step {
       padding: 14px 14px 12px;
       border-radius: 14px;
-      background: rgba(15,23,42,0.9);
-      border: 1px dashed rgba(148,163,184,0.45);
+      background: rgba(15,23,42,0.96);
+      border: 1px dashed rgba(148,163,184,0.7);
     }
 
     .step-label {
@@ -338,12 +412,55 @@
       font-size: 14px;
       font-weight: 600;
       margin-bottom: 4px;
+      color: #e5e7eb;
     }
 
     .step-text {
       font-size: 12px;
       color: var(--text-muted);
     }
+
+    /* PHOTO BANNER WITH TANKER */
+
+    .photo-banner {
+      margin-top: 34px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .photo-banner-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(15,23,42,0.9), rgba(15,23,42,0.4)),
+        url("bg-tanker.jpg") center/cover no-repeat;
+      z-index: -1;
+    }
+
+    .photo-banner-content {
+      padding: 22px 22px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .photo-banner-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .photo-banner-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 380px;
+    }
+
+    /* CLIENTS */
 
     .clients {
       display: grid;
@@ -355,12 +472,14 @@
     .client-pill {
       padding: 8px 10px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.35);
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(148,163,184,0.6);
       font-size: 12px;
       text-align: center;
       color: var(--text-muted);
     }
+
+    /* CONTACTS */
 
     .contacts {
       display: grid;
@@ -370,10 +489,11 @@
     }
 
     .contacts-card {
-      background: rgba(15,23,42,0.95);
+      background: rgba(15,23,42,0.98);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
       padding: 14px 16px;
+      box-shadow: 0 12px 30px rgba(15,23,42,0.8);
     }
 
     .contacts-list {
@@ -396,16 +516,17 @@
 
     .map-placeholder {
       border-radius: var(--radius-lg);
-      border: 1px dashed rgba(148,163,184,0.45);
+      border: 1px dashed rgba(148,163,184,0.7);
       padding: 14px 16px;
       font-size: 12px;
       color: var(--text-muted);
-      background: rgba(15,23,42,0.9);
+      background: rgba(15,23,42,0.96);
+      box-shadow: 0 12px 30px rgba(15,23,42,0.8);
     }
 
     footer {
-      margin-top: 40px;
-      padding-top: 18px;
+      margin-top: 38px;
+      padding-top: 16px;
       border-top: 1px solid var(--border-soft);
       font-size: 11px;
       color: var(--text-muted);
@@ -418,6 +539,7 @@
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
+        padding: 24px 18px 18px;
       }
       .cards-3 {
         grid-template-columns: minmax(0,1fr);
@@ -432,10 +554,13 @@
         grid-template-columns: minmax(0,1fr);
       }
       header {
-        border-radius: 16px;
+        border-radius: 18px;
       }
       nav {
         display: none;
+      }
+      .photo-banner-content {
+        padding: 18px 16px 16px;
       }
     }
   </style>
@@ -460,40 +585,52 @@
 
     <main>
       <!-- HERO -->
-      <section class="hero" id="about">
-        <div>
-          <div class="hero-kicker">паливна логістика</div>
-          <h1 class="hero-title">Від танкера до коліс<br>пальне під контролем</h1>
-          <p class="hero-subtitle">
-            АКВА ТРЕЙД ЛОГІСТІК займається перевалкою дизельного палива та бензину з можливістю навантаження у залізничні цистерни та автотранспорт. Забезпечуємо прозорий і керований ланцюг поставки.
-          </p>
-          <div class="hero-highlights">
-            <span class="pill pill-accent">перевалка дизельного палива та бензину</span>
-            <span class="pill">залізниця та автотранспорт</span>
-            <span class="pill">портова інфраструктура</span>
+      <div class="hero-wrapper" id="about">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay-glow"></div>
+        <section class="hero">
+          <div>
+            <div class="hero-kicker"><span>паливна логістика</span></div>
+            <h1 class="hero-title">
+              Від <span>танкера</span> до коліс —<br>пальне під контролем
+            </h1>
+            <p class="hero-subtitle">
+              АКВА ТРЕЙД ЛОГІСТІК спеціалізується на перевалці дизельного палива та бензину з можливістю навантаження у залізничні цистерни та автотранспорт. Ми працюємо там, де важливі точність, безпека і час.
+            </p>
+            <div class="hero-highlights">
+              <span class="pill pill-accent">перевалка дизельного палива та бензину</span>
+              <span class="pill">портова інфраструктура на Дунаї</span>
+              <span class="pill">ЖД цистерни та автоцистерни</span>
+            </div>
+            <div class="hero-actions">
+              <button class="btn-primary" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">
+                Зв&apos;язатися з нами
+              </button>
+              <div class="hero-note">Обговоримо обсяги, напрямки та графік перевалки пального.</div>
+            </div>
           </div>
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">
-              Отримати консультацію
-            </button>
-            <div class="hero-note">Швидкий зв&apos;язок з нашим представником по логістиці пального.</div>
+          <div class="hero-right">
+            <div class="hero-tag">Ланцюг поставки пального</div>
+            <p class="hero-scheme">
+              Супроводжуємо паливо на кожному етапі: від заходу танкера в порт до відвантаження у транспорт клієнта.
+            </p>
+            <div class="hero-flow">
+              <span class="flow-item">Танкер</span>
+              <span class="flow-arrow">➝</span>
+              <span class="flow-item">Резервуар</span>
+              <span class="flow-arrow">➝</span>
+              <span class="flow-item">Залізнична цистерна</span>
+              <span class="flow-arrow">/</span>
+              <span class="flow-item">Автоцистерна</span>
+            </div>
+            <div class="hero-metrics">
+              <div class="hero-metric">Фокус на дизельному пальному та бензині</div>
+              <div class="hero-metric">Прозорий облік обсягів та документообіг</div>
+            </div>
+            <div class="badge-corner">Облік • Документи • Таймінг</div>
           </div>
-        </div>
-        <div class="hero-right">
-          <div class="hero-tag">Ланцюг поставки пального</div>
-          <p class="hero-scheme">Ми супроводжуємо вантаж на кожному етапі — від причалу до виїзду транспорту.</p>
-          <div class="hero-flow">
-            <span class="flow-item">Танкер</span>
-            <span class="flow-arrow">➝</span>
-            <span class="flow-item">Резервуар</span>
-            <span class="flow-arrow">➝</span>
-            <span class="flow-item">Залізнична цистерна</span>
-            <span class="flow-arrow">/</span>
-            <span class="flow-item">Автоцистерна</span>
-          </div>
-          <div class="badge-corner">Контроль обсягів • Документи • Таймінг</div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <!-- SERVICES -->
       <section id="services">
@@ -501,26 +638,26 @@
           <div class="section-kicker">що ми робимо</div>
           <h2 class="section-title">Послуги АКВА ТРЕЙД ЛОГІСТІК</h2>
           <p class="section-sub">
-            Ми надаємо комплексні рішення з перевалки пального, фокусуючись на безпеці, точності та чіткій координації операцій.
+            Поєднуємо портову інфраструктуру, досвід роботи з нафтопродуктами та чітку логістику для клієнтів, які працюють з великими обсягами пального.
           </p>
         </div>
         <div class="cards-3">
           <div class="card">
             <div class="card-title">Перевалка дизельного палива</div>
             <p class="card-text">
-              Прийом дизельного палива з танкерів, тимчасове зберігання та підготовка до подальшого відвантаження клієнтам.
+              Прийом дизельного палива з танкерів, тимчасове зберігання в резервуарах та підготовка до подальшого відвантаження згідно з вимогами клієнта.
             </p>
           </div>
           <div class="card">
             <div class="card-title">Перевалка бензину</div>
             <p class="card-text">
-              Організація перевалки бензину з дотриманням вимог безпеки та контролю якості на всіх етапах логістичного ланцюга.
+              Організація перевалки бензину з дотриманням стандартів безпеки, контролю якості та технічних норм на кожному етапі логістичного ланцюга.
             </p>
           </div>
           <div class="card">
             <div class="card-title">Навантаження у ЖД та автотранспорт</div>
             <p class="card-text">
-              Відвантаження продукції у залізничні цистерни та автоцистерни з оптимізацією маршрутів і графіка руху.
+              Відвантаження пального у залізничні цистерни та автоцистерни з оптимізацією графіка, мінімізацією простоїв та прозорим документообігом.
             </p>
           </div>
         </div>
@@ -532,31 +669,45 @@
           <div class="section-kicker">як ми працюємо</div>
           <h2 class="section-title">Схема роботи з клієнтом</h2>
           <p class="section-sub">
-            Прозора послідовність дій дозволяє планувати логістику наперед і мінімізувати простої транспорту.
+            Чітка послідовність дій дозволяє планувати логістику наперед, знижувати ризики та уникати затримок при постачанні пального.
           </p>
         </div>
         <div class="steps">
           <div class="step">
             <div class="step-label">крок 1</div>
-            <div class="step-title">Запит та погодження обсягів</div>
+            <div class="step-title">Запит та параметри</div>
             <p class="step-text">
-              Отримуємо від клієнта інформацію щодо продукту, обсягу, строків та напрямку відвантаження.
+              Отримуємо від клієнта інформацію про продукт, обсяг, напрямок, графік та особливі вимоги до перевалки й відвантаження.
             </p>
           </div>
           <div class="step">
             <div class="step-label">крок 2</div>
             <div class="step-title">Організація перевалки</div>
             <p class="step-text">
-              Приймаємо вантаж, організовуємо перевалку, тимчасове зберігання та готуємо пальне до відвантаження.
+              Приймаємо вантаж, організовуємо перевалку та тимчасове зберігання, готуємо паливо до навантаження у залізничні цистерни або автотранспорт.
             </p>
           </div>
           <div class="step">
             <div class="step-label">крок 3</div>
             <div class="step-title">Відвантаження та документи</div>
             <p class="step-text">
-              Навантажуємо пальне у залізничні цистерни або автотранспорт, оформлюємо супровідні документи та координуємо відправку.
+              Навантажуємо цистерни, оформлюємо супровідні документи, координуємо відправку та надаємо дані для обліку й звітності.
             </p>
           </div>
+        </div>
+      </section>
+
+      <!-- PHOTO BANNER WITH TANKER -->
+      <section class="photo-banner">
+        <div class="photo-banner-bg"></div>
+        <div class="photo-banner-content">
+          <div>
+            <div class="section-kicker">морська логістика</div>
+            <div class="photo-banner-title">Танкер → порт → резервуар</div>
+          </div>
+          <p class="photo-banner-text">
+            Ми працюємо з морськими поставками пального: організовуємо прийом танкера, перевалку в резервуари та подальше відвантаження у залізничні цистерни або автотранспорт відповідно до задач клієнта.
+          </p>
         </div>
       </section>
 
@@ -566,7 +717,7 @@
           <div class="section-kicker">для кого</div>
           <h2 class="section-title">Клієнти, з якими ми працюємо</h2>
           <p class="section-sub">
-            АКВА ТРЕЙД ЛОГІСТІК є партнером для компаній, що працюють з пальним у великих обсягах.
+            АКВА ТРЕЙД ЛОГІСТІК — партнер для компаній, що працюють з пальним у промислових масштабах та цінують чітку логістику.
           </p>
         </div>
         <div class="clients">
@@ -583,7 +734,7 @@
           <div class="section-kicker">контакти</div>
           <h2 class="section-title">Зв&apos;язатися з АКВА ТРЕЙД ЛОГІСТІК</h2>
           <p class="section-sub">
-            Залиште запит або звертайтесь напряму — узгодимо обсяги, графік та деталі логістики.
+            Звертайтесь напряму — узгодимо деталі співпраці, обсяги, напрямки відвантаження та додаткові умови.
           </p>
         </div>
         <div class="contacts">
@@ -599,7 +750,7 @@
             <div class="label">Локація</div>
             <p>
               Портова інфраструктура на Дунаї (Україна).<br>
-              Точну адресу та деталі доступу до об&apos;єкта надаємо після встановлення контакту.
+              Точні координати та деталі доступу до об&apos;єкта надаємо після встановлення контакту.
             </p>
           </div>
         </div>
